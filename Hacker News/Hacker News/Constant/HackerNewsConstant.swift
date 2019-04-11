@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// This is Constant Class For Hacker News.
 struct HackerNewsConstant {
 static let AppName = "Hacker News"
 static let sourceUrlEmptyMessage = "Source Url is nil for this particular news."

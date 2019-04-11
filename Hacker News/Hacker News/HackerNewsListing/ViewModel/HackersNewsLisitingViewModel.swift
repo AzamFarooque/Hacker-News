@@ -10,12 +10,15 @@ import Foundation
 
 typealias onCompletion = (Bool, String?) -> Void
 
+/// This is NewsListing ViewModel Class which contains all business logic related to NewsListing.
 class HackersNewsLisitingViewModel {
     
+    // MARK: - HackersNews Model Instance.
     var dataSource : HackersNewsModel!
+    // MARK: - HackersNewsListing Model Array.
     var newsListing : [HackersNewsListingModel] = []
 
-    //  Mark : GetFlickerListing Detail and UpdateModel
+    //  Mark : Making Network Request To Fetch News Listing For Related Categories Entered In Searh Bar.
     
     func getNewsListing(inUrl : String , page : Int , completionBlock : @escaping onCompletion){
         HackerNewsAPIManager.sharedInstance.requestAPI(requestMethod : .get, inUrl: inUrl ,page : page) { (data, error) in
